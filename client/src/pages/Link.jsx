@@ -33,17 +33,20 @@ const ListLinksPage = () => {
     if (!window.confirm("Are you sure you want to delete this link?")) return;
 
     try {
+      setLoading(true);
       await axios.delete(`${API_BASE_URL}/link/${code}`);
       setLinks(links.filter((link) => link.code !== code));
     } catch (err) {
       alert("Failed to delete link");
+    } finally {
+      setLoading(false);
     }
   };
   const handleRedirect = async (code) => {
-      window.open(`${API_BASE_URL}/${code}`, "_blank");
-      const response = await axios.get(`${API_BASE_URL}/link/${code}`);
-      console.log(response);
-      window.location.reload()
+    window.open(`${API_BASE_URL}/${code}`, "_blank");
+    const response = await axios.get(`${API_BASE_URL}/link/${code}`);
+    console.log(response);
+    window.location.reload();
   };
 
   const handleCopy = (code) => {

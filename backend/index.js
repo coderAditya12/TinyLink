@@ -20,3 +20,4 @@ app.listen(4444, () => {
   main();
   console.log("Server is running on port 4444");
 });
+//DATABASE_URL="postgresql://neondb_owner:npg_WxKX3Ny8DmfU@ep-icy-thunder-a17t8cf6-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
