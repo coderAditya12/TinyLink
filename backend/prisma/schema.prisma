@@ -13,7 +13,7 @@ datasource db {
 }
 model Link {
   id         String   @id @default(cuid())
-  originalUrl String
+  originalUrl String  
   shortUrl    String   @unique
   visitCount  Int      @default(0)
   createdAt   DateTime @default(now())
